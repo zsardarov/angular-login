@@ -1,0 +1,25 @@
+@if (isLoading | async) {
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+  </div>
+}
+<div class="row">
+  @for (contact of contactList | async; track contact) {
+    <div class="col-4 mt-2">
+      <div
+        class="card bg-dark text-white mt-2"
+        style="border-radius: 1rem"
+      >
+        <div class="card-body p-2 text-center">
+          <div>
+            <h5>{{contact.name}}</h5>
+            <button class="btn btn-success" [routerLink]="[ contact.id]">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+

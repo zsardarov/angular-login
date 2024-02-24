@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+  <div class="col-4 card bg-dark text-white mt-3" style="border-radius: 1rem">
+    <div class="card-body p-2 text-center">
+      <div>
+        <h5>User Details:</h5>
+        @if (user | async; as user) {
+          <section>
+            <h3>{{user.name}}</h3>
+            <p>{{user.email}}</p>
+          </section>
+        }
+      </div>
+      <button class="btn btn-success" [routerLink]="['../']">Go Back</button>
+    </div>
+  </div>
+</div>
